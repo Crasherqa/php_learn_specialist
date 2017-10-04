@@ -1,3 +1,11 @@
+<?php
+    //Установка локали и даты
+    setlocale(LC_ALL, "ukaraine");
+    $day = strftime('%d');
+    $mon = strftime('%B');
+    $year = strftime('%Y');
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -22,7 +30,7 @@
     <!-- Заголовок -->
     <!-- Область основного контента -->
       <blockquote>
-      <?php echo strftime('Сьогодне %d-%m-%Y'); ?>
+        <?php echo 'Сегодне: ', $mon?>
       </blockquote>
     <h3>Зачем мы ходим в школу?</h3>
     <p>
@@ -58,7 +66,8 @@
   </div>
   <div id="footer">
     <!-- Нижняя часть страницы -->
-    &copy; Супер Мега Веб-мастер, 2000 &ndash; 2015
+    &copy; Супер Мега Веб-мастер, 2000 &ndash;
+    <?=$year?> 
     <!-- Нижняя часть страницы -->
   </div>
 </body>
