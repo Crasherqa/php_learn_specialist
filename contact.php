@@ -1,3 +1,23 @@
+<?php
+/*
+  ini_get("post_max_size");
+*/
+
+$size = ini_get(post_max_size);
+$type = $size[strlen($size)-1];
+$size = (int)$size;
+
+switch (strtoupper($type)) {
+  case 'G':
+    $size *= 1024;
+  case 'M':
+    $size *= 1024;  
+  case 'K':
+    $size *= 1024;
+}
+echo $size;
+?>
+
 <!DOCTYPE html>
 <html>
 

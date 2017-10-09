@@ -26,11 +26,27 @@
 
   <div id="content">
     <!-- Заголовок -->
-    <h1>Добро пожаловать на наш сайт!</h1>
+    <h1><?= $welcome ?></h1>
     <!-- Заголовок -->
     <!-- Область основного контента -->
       <blockquote>
-        <?php echo 'Сегодне: ', $mon?>
+        <?php 
+        //echo "Сегодне: $dsy, $mon, $year";
+        $hour = (int) strftime('%H');
+        $welcome = '';
+
+        if ($hour>0 && $hour<6) {
+          echo $welcome = 'Доброї ночі';
+        }elseif ($hour>=6 && $hour<12) {
+          echo $welcome = 'Доброго ранку';
+        }elseif ($hour>=12 && $hour<18) {
+          echo $welcome = 'Добрий день';
+        }elseif ($hour>=18 && $hour<23) {
+          echo $welcome = 'Добрий вечір';
+        }else {
+          echo $welcome = 'Доброї ночі';
+        }
+        ?>
       </blockquote>
     <h3>Зачем мы ходим в школу?</h3>
     <p>
@@ -49,8 +65,24 @@
     <!-- Навигация -->
     <h2>Навигация по сайту</h2>
     <!-- Меню -->
+
+    <?php
+    $leftMenu = [
+        ['link'=>'Домой', 'href'=>'index.php'],
+        ['link'=>'О нас', 'href'=>'about.php'],
+        ['link'=>'Контакты', 'href'=>'contact.php'],
+        ['link'=>'Таблица умножения', 'href'=>'table.php'],
+        ['link'=>'Калькулятор', 'href'=>'calc.php']
+    ];  
+    ?>
     <ul>
-      <li><a href='index.php'>Домой</a>
+      <li><a href='<?= $leftMenu[0]['href']?>'><?= $leftMenu[0]['link']?></a></li>
+      <li><a href='<?= $leftMenu[1]['href']?>'><?= $leftMenu[1]['link']?></a></li>
+      <li><a href='<?= $leftMenu[2]['href']?>'><?= $leftMenu[2]['link']?></a></li>
+      <li><a href='<?= $leftMenu[3]['href']?>'><?= $leftMenu[3]['link']?></a></li>
+      <li><a href='<?= $leftMenu[4]['href']?>'><?= $leftMenu[4]['link']?></a></li>
+
+      <!-- <li><a href='index.php'>Домой</a>
       </li>
       <li><a href='about.php'>О нас</a>
       </li>
@@ -59,7 +91,7 @@
       <li><a href='table.php'>Таблица умножения</a>
       </li>
       <li><a href='calc.php'>Калькулятор</a>
-      </li>
+      </li> -->
     </ul>
     <!-- Меню -->
     <!-- Навигация -->
