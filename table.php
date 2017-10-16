@@ -1,6 +1,25 @@
 <?php
-$cols = 10;
-$rows = 10;
+
+function drawTable($cols = 5, $rows = 5, $color = "red") {
+			echo "<table border='1'>";
+		for($tr=1; $tr<=$rows; $tr++){
+			echo "<tr>";
+			for ($td=1; $td<=$cols; $td++) {
+				if ($tr == 1 or $td == 1) {
+				echo "<th style='background:$color'>" . $tr*$td . "</th>";
+					
+				}else{
+				echo "<td>" . $tr*$td . "</td>";
+					
+				}
+			}
+			echo "</tr>";
+		}
+
+		echo "</table>";
+
+		}
+
 ?>
 
 <!DOCTYPE html>
@@ -44,22 +63,16 @@ $rows = 10;
 		</form>
 		<!-- Таблица -->
 
-		
+
 		<?php
 
-
-		echo "<table border='1'>";
-		for($tr=1; $tr<=$rows; $tr++){
-			echo "<tr>";
-			for ($td=1; $td<=$cols; $td++) { 
-				echo "<td>" . $tr*$td . "</td>";
-			}
-			echo "</tr>";
-		}
-
-		echo "</table>";
-
 		
+
+
+		drawTable(7, 7);
+
+
+
 
 		?>
 

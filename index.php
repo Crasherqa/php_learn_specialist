@@ -4,6 +4,34 @@
     $day = strftime('%d');
     $mon = strftime('%B');
     $year = strftime('%Y');
+
+    //Ініціалізація масиву
+    $leftMenu = [
+        ['link'=>'Домой', 'href'=>'index.php'],
+        ['link'=>'О нас', 'href'=>'about.php'],
+        ['link'=>'Контакты', 'href'=>'contact.php'],
+        ['link'=>'Таблица умножения', 'href'=>'table.php'],
+        ['link'=>'Калькулятор', 'href'=>'calc.php']
+    ];  
+    
+    //Малюєм меню
+    function drawMenu($menu = [], $vertical = true) {
+        
+        if ($vertical == true) {
+          foreach ($menu as $value) {
+            echo "<li>";
+            echo "<a href=$value[href]> $value[link]</a>";
+            echo "</li>";
+          }
+
+        }else{
+          foreach ($menu as $value) {
+          echo "<a href=$value[href]> $value[link]</a>";
+          }
+        }
+
+        
+    }
 ?>
 
 <!DOCTYPE html>
@@ -66,21 +94,22 @@
     <h2>Навигация по сайту</h2>
     <!-- Меню -->
 
-    <?php
-    $leftMenu = [
-        ['link'=>'Домой', 'href'=>'index.php'],
-        ['link'=>'О нас', 'href'=>'about.php'],
-        ['link'=>'Контакты', 'href'=>'contact.php'],
-        ['link'=>'Таблица умножения', 'href'=>'table.php'],
-        ['link'=>'Калькулятор', 'href'=>'calc.php']
-    ];  
-    ?>
+    
     <ul>
-      <li><a href='<?= $leftMenu[0]['href']?>'><?= $leftMenu[0]['link']?></a></li>
-      <li><a href='<?= $leftMenu[1]['href']?>'><?= $leftMenu[1]['link']?></a></li>
-      <li><a href='<?= $leftMenu[2]['href']?>'><?= $leftMenu[2]['link']?></a></li>
-      <li><a href='<?= $leftMenu[3]['href']?>'><?= $leftMenu[3]['link']?></a></li>
-      <li><a href='<?= $leftMenu[4]['href']?>'><?= $leftMenu[4]['link']?></a></li>
+
+      <?php
+
+      drawMenu($leftMenu);
+
+
+
+      // foreach ($leftMenu as $value) {
+      //   echo "<li>";
+      //   echo "<a href=$value[href]> $value[link]</a>";
+      //   echo "</li>";
+        
+      // }
+      ?>
 
       <!-- <li><a href='index.php'>Домой</a>
       </li>
