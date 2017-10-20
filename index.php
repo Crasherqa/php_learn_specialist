@@ -5,6 +5,7 @@
     $mon = strftime('%B');
     $year = strftime('%Y');
 
+    
     //Ініціалізація масиву
     $leftMenu = [
         ['link'=>'Домой', 'href'=>'index.php'],
@@ -127,6 +128,10 @@
   </div>
   <div id="footer">
     <!-- Нижняя часть страницы -->
+    <?php
+    drawMenu($leftMenu, false);
+    ?>
+    <hr> 
     &copy; Супер Мега Веб-мастер, 2000 &ndash;
     <?=$year?> 
     <!-- Нижняя часть страницы -->

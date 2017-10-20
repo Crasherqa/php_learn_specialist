@@ -1,28 +1,23 @@
 <?php
 
-function say(){
-	echo "<h3>Hello, world!</h3>";
+function my_count($var) {
+	$count = 0;
+	if (is_array($var)) {
+		foreach ($var as $val) {
+			$count++;
+
+		}
+		return $count;
+	}elseif (is_null($var)) {
+		return 0;
+	}else{
+		return 1;
+	}
 }
 
-$str = "say";
-$str();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+$arr = [2, 5, 7, 8];
+echo my_count($arr);
 
 
 
@@ -41,10 +36,10 @@ $str();
 
 // print_r($array);
 
-// foreach ($array as &$value) {
+// foreach ($array as $value) {
 // 	$value *= 10;
 // }
 
 // print_r($array);
 
-?>
+

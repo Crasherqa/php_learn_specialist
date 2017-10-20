@@ -66,13 +66,7 @@ function drawTable($cols = 5, $rows = 5, $color = "red") {
 
 		<?php
 
-		
-
-
 		drawTable(7, 7);
-
-
-
 
 		?>
 
@@ -134,6 +128,29 @@ function drawTable($cols = 5, $rows = 5, $color = "red") {
 		<!-- Меню -->
 	</div>
 	<div id="footer">
+
+		<?php
+
+function my_count($var) {
+	$count = 0;
+	if (is_array($var)) {
+		foreach ($variable as $var) {
+			$count++;
+		}
+		return $count;
+	}elseif (is_null($var)) {
+		return 0;
+	}else{
+		return 1;
+	}
+}
+
+
+$arr = [2, 5, 7, 8];
+echo my_count($arr);
+
+
+?>
 		<!-- Нижняя часть страницы -->
 		&copy; Супер Мега Веб-мастер, 2000 &ndash; 2015
 		<!-- Нижняя часть страницы -->
