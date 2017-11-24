@@ -1,40 +1,3 @@
-<?php
-    //Установка локали и даты
-    setlocale(LC_ALL, "ukaraine");
-    $day = strftime('%d');
-    $mon = strftime('%B');
-    $year = strftime('%Y');
-
-    
-    //Ініціалізація масиву
-    $leftMenu = [
-        ['link'=>'Домой', 'href'=>'index.php'],
-        ['link'=>'О нас', 'href'=>'about.php'],
-        ['link'=>'Контакты', 'href'=>'contact.php'],
-        ['link'=>'Таблица умножения', 'href'=>'table.php'],
-        ['link'=>'Калькулятор', 'href'=>'calc.php']
-    ];  
-    
-    //Малюєм меню
-    function drawMenu($menu = [], $vertical = true) {
-        
-        if ($vertical == true) {
-          foreach ($menu as $value) {
-            echo "<li>";
-            echo "<a href=$value[href]> $value[link]</a>";
-            echo "</li>";
-          }
-
-        }else{
-          foreach ($menu as $value) {
-          echo "<a href=$value[href]> $value[link]</a>";
-          }
-        }
-
-        
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -48,8 +11,7 @@
 
   <div id="header">
     <!-- Верхняя часть страницы -->
-    <img src="logo.gif" width="187" height="29" alt="Наш логотип" class="logo" />
-    <span class="slogan">приходите к нам учиться</span>
+   
     <!-- Верхняя часть страницы -->
   </div>
 
