@@ -1,11 +1,5 @@
 <?php
-    //Установка локали и даты
-    setlocale(LC_ALL, "ukaraine");
-    $day = strftime('%d');
-    $mon = strftime('%B');
-    $year = strftime('%Y');
-
-    
+   
     //Ініціалізація масиву
     $leftMenu = [
         ['link'=>'Домой', 'href'=>'index.php'],

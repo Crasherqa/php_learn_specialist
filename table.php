@@ -1,4 +1,6 @@
-
+<?
+require_once "inc/lib.inc.php";
+?>
 
 <!DOCTYPE html>
 <html>
@@ -107,7 +109,7 @@
 	</div>
 	<div id="footer">
 
-		<?php
+<!-- 		<?php
 
 function my_count($var) {
 	$count = 0;
@@ -129,7 +131,7 @@ echo my_count($arr);
 
 
 ?>
-		<!-- Нижняя часть страницы -->
+	 -->	<!-- Нижняя часть страницы -->
 		&copy; Супер Мега Веб-мастер, 2000 &ndash; 2015
 		<!-- Нижняя часть страницы -->
 	</div>
