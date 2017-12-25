@@ -76,7 +76,7 @@ require_once "inc/data.inc.php";
           break;
         
         default:
-          include 'index.inc.php';
+          include 'inc/index.inc.php';
       }
       ?>
     <!-- Область основного контента -->
